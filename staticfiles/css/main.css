@@ -1,0 +1,75 @@
+/* Logo + Navbar Styles */
+    /* Logo Text */
+    .logo-text {
+        font-size: 2rem;
+        font-family: 'Poppins', sans-serif;
+        color: #007bff;
+    }
+
+    .bridge-text {
+        color: #ff6f61;
+    }
+
+    /* Navbar Links */
+    .navbar-nav .nav-link {
+        font-size: 1rem; /* Larger font size */
+        font-weight: 600; /* Slightly bolder */
+        color: #333; /* Darker color */
+        padding: 10px 15px; /* Spacing around links */
+        transition: all 0.3s ease;
+    }
+    .navbar-nav .btn {
+    margin: 0 5px;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: #007bff;
+        text-decoration: underline;
+    }
+
+    /* Buttons */
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    
+    .btn-primary {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-outline-primary {
+    color: #0056b3;
+}
+
+
+
+    .btn-outline-primary {
+        color: #007bff;
+        border-color: #007bff;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    /* Mobile Tweaks */
+    @media (max-width: 768px) {
+        .logo-text {
+            font-size: 1.5rem;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 0.95rem;
+            padding: 8px 12px;
+        }
+
+        .btn-primary, .btn-outline-primary {
+            font-size: 0.9rem;
+        }
+    }

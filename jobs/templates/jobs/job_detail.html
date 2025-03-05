@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-3">{{ job.title }}</h1>
+    <p class="text-muted"><strong>Company:</strong> {{ job.company }}</p>
+    <p class="text-muted"><strong>Location:</strong> {{ job.location }}</p>
+    <p class="text-muted"><strong>Category:</strong> {{ job.category.name }}</p>
+
+    <div class="job-description mb-4">
+        <h4>Description</h4>
+        <p>{{ job.description }}</p>
+    </div>
+
+    <div class="job-requirements mb-4">
+        <h4>Requirements</h4>
+        <p>{{ job.requirements }}</p>
+    </div>
+
+    <div class="job-salary mb-4">
+        <h4>Salary</h4>
+        <p>{{ job.salary }}</p>
+    </div>
+
+    {% if user.is_authenticated %}
+        <a href="{% url 'apply_for_job' job.id %}" class="btn btn-success">Apply for this job</a>
+    {% else %}
+        <p class="text-danger">You must <a href="{% url 'login' %}">login</a> to apply for this job.</p>
+    {% endif %}
+</div>
+{% endblock %}

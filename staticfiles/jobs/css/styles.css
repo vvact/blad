@@ -1,0 +1,64 @@
+/*Hero Section Styling */
+    .hero-section {
+        background: linear-gradient(to right, #007bff, #ff6f61);
+        color: white;
+        padding: 100px 0;
+        position: relative;
+    }
+
+    .hero-section h1 {
+        font-size: 2.75rem;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+        color: #f8f9fa;
+    }
+
+    .hero-search-form input {
+        border: none;
+        padding: 15px;
+        font-size: 1rem;
+        border-radius: 0.5rem;
+    }
+
+    .hero-search-form button {
+        background-color: #ff6f61;
+        border: none;
+        padding: 15px;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 0.5rem;
+        transition: background-color 0.3s;
+    }
+
+    .hero-search-form button:hover {
+        background-color: #e95a4f;
+    }
+
+    .hero-section a {
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .hero-section a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .hero-section h1 {
+            font-size: 2rem;
+        }
+
+        .hero-search-form input {
+            font-size: 0.9rem;
+            padding: 12px;
+        }
+
+        .hero-search-form button {
+            font-size: 0.9rem;
+            padding: 12px;
+        }
+    }

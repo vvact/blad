@@ -1,0 +1,450 @@
+{% extends 'bbb.html' %} {% load static %} {% block content %}
+
+<!-- Hero Section Styling -->
+<style>
+  .hero-section {
+    background: linear-gradient(to right, #007bff, #ff6f61);
+    color: white;
+    padding: 100px 0;
+    position: relative;
+  }
+  .hero-section {
+    background: linear-gradient(to right, #007bff, #ff6f61);
+  }
+  .hero-section h1 {
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-search-form .form-control {
+    height: 48px;
+    border: 1px solid #ddd;
+  }
+  .hero-section h1 {
+    font-size: 2.75rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-section p {
+    font-size: 1.1rem;
+    color: #f8f9fa;
+  }
+
+  .hero-search-form input {
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .hero-search-form button {
+    background-color: #ff6f61;
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s;
+  }
+
+  .hero-search-form button:hover {
+    background-color: #e95a4f;
+  }
+
+  .hero-section a {
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .hero-section a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .hero-section h1 {
+      font-size: 2rem;
+    }
+
+    .hero-search-form input {
+      font-size: 0.9rem;
+      padding: 12px;
+    }
+
+    .hero-search-form button {
+      font-size: 0.9rem;
+      padding: 12px;
+    }
+  }
+</style>
+
+<!-- Hero Section Start -->
+<section
+  class="hero-section d-flex align-items-center"
+  style="background: #f8f9fa; padding: 80px 0"
+>
+  <div class="container text-center">
+    <h1 class="display-4 font-weight-bold text-primary">
+      Find Your Dream Job with <span class="text-danger">WorkBridge</span>
+    </h1>
+    <p class="lead text-muted">
+      Search thousands of jobs from top companies and get hired fast!
+    </p>
+
+    <form class="hero-search-form mt-4">
+      <div class="row justify-content-center">
+        <div class="col-md-4 mb-2 mb-md-0">
+          <input
+            type="text"
+            class="form-control form-control-lg"
+            placeholder="Job title, keyword..."
+          />
+        </div>
+        <div class="col-md-3 mb-2 mb-md-0">
+          <input
+            type="text"
+            class="form-control form-control-lg"
+            placeholder="Location (City, Country)"
+          />
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-primary btn-lg btn-block">
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <p class="mt-4 text-muted">
+      Popular Searches: <a href="#" class="text-primary">Software Engineer</a>,
+      <a href="#" class="text-primary">Marketing</a>,
+      <a href="#" class="text-primary">Finance</a>
+    </p>
+  </div>
+</section>
+<!-- Hero Section End -->
+
+<!--featured jobs-->
+<div class="container py-5 text-center">
+  <h3 class="mb-3">🔥 Featured Jobs</h3>
+  <p class="text-muted mb-4">
+    Discover some of the top jobs handpicked just for you.
+  </p>
+
+  <!-- Add scroll container here -->
+  <div class="scroll-container">
+    <div class="row flex-nowrap">
+      <div class="col-md-4 col-10 mb-3">
+        <div class="job-card p-3 shadow-sm rounded">
+          <h5 class="job-title mb-1">Software Engineer</h5>
+          <p class="company text-muted mb-1">Tech Company</p>
+          <p class="location text-secondary mb-1">
+            <i class="bi bi-geo-alt"></i> New York, NY
+          </p>
+          <p class="salary text-success font-weight-bold mb-1">
+            $80,000 - $100,000 per year
+          </p>
+          <p class="deadline text-danger mb-2">Apply by: 2023-12-31</p>
+          <p
+            class="description d-none d-md-block text-muted"
+            style="font-size: 0.9rem"
+          >
+            We are looking for a skilled Software Engineer to join our team. You
+            will be responsible for developing and maintaining web applications.
+          </p>
+          <a href="#" class="btn btn-primary btn-sm">Apply Now</a>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-10 mb-3">
+        <div class="job-card p-3 shadow-sm rounded">
+          <h5 class="job-title mb-1">Marketing Specialist</h5>
+          <p class="company text-muted mb-1">Creative Agency</p>
+          <p class="location text-secondary mb-1">
+            <i class="bi bi-geo-alt"></i> San Francisco, CA
+          </p>
+          <p class="salary text-success font-weight-bold mb-1">
+            $60,000 - $75,000 per year
+          </p>
+          <p class="deadline text-danger mb-2">Apply by: 2023-12-28</p>
+          <p
+            class="description d-none d-md-block text-muted"
+            style="font-size: 0.9rem"
+          >
+            Join our creative team to design and execute innovative marketing
+            campaigns for top clients.
+          </p>
+          <a href="#" class="btn btn-primary btn-sm">Apply Now</a>
+        </div>
+      </div>
+
+
+      <div class="col-md-4 col-10 mb-3">
+        <div class="job-card p-3 shadow-sm rounded">
+          <h5 class="job-title mb-1">Marketing Specialist</h5>
+          <p class="company text-muted mb-1">Creative Agency</p>
+          <p class="location text-secondary mb-1">
+            <i class="bi bi-geo-alt"></i> San Francisco, CA
+          </p>
+          <p class="salary text-success font-weight-bold mb-1">
+            $60,000 - $75,000 per year
+          </p>
+          <p class="deadline text-danger mb-2">Apply by: 2023-12-28</p>
+          <p
+            class="description d-none d-md-block text-muted"
+            style="font-size: 0.9rem"
+          >
+            Join our creative team to design and execute innovative marketing
+            campaigns for top clients.
+          </p>
+          <a href="#" class="btn btn-primary btn-sm">Apply Now</a>
+        </div>
+      </div>
+
+      <!-- More jobs here... -->
+    </div>
+  </div>
+
+  <!-- View All Jobs Button -->
+  <div class="mt-4">
+    <a href="/jobs" class="btn btn-outline-primary btn-lg">View All Jobs</a>
+  </div>
+</div>
+
+<style>
+  /* Job Card Styling - Keep your existing styles */
+  .job-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background: #f8f9fa;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word; /* Ensures long words wrap */
+    max-height: 100%; /* Ensures no accidental overflow */
+  }
+
+  .description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word; /* Same here */
+  }
+  .job-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    background-color: #fff;
+    padding-top: calc(12px + 5px);
+  }
+  .job-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  /* Scroll container for small screens */
+  .scroll-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .col-10 {
+    scroll-snap-align: start;
+  }
+
+  /* Flex-nowrap ensures cards are in a line */
+  .row.flex-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  /* On desktop, behave like normal grid */
+  @media (min-width: 768px) {
+    .scroll-container {
+      overflow-x: visible;
+    }
+    .row.flex-nowrap {
+      flex-wrap: wrap;
+    }
+  }
+
+  /* Mobile card width */
+  @media (max-width: 768px) {
+    .col-10 {
+      flex: 0 0 80%;
+      max-width: 80%;
+    }
+    .description {
+      display: none;
+    }
+    .job-card {
+      padding: 12px;
+    }
+  }
+</style>
+
+<section class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-4">Explore Job Categories</h2>
+      <p class="text-muted mb-5">
+        Browse jobs by industry and find your perfect match.
+      </p>
+  
+      <div class="row gx-3 gy-3"> <!-- 👈 Adjusted here -->
+        <!-- Category Card 1 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body text-center">
+              <div class="fs-1 mb-3">💻</div>
+              <h5 class="card-title">Technology</h5>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Category Card 2 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body text-center">
+              <div class="fs-1 mb-3">📊</div>
+              <h5 class="card-title">Marketing</h5>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Category Card 3 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body text-center">
+              <div class="fs-1 mb-3">💰</div>
+              <h5 class="card-title">Finance</h5>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Category Card 4 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body text-center">
+              <div class="fs-1 mb-3">⚕️</div>
+              <h5 class="card-title">Healthcare</h5>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Add more categories if needed -->
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 bg-white">
+    <div class="container text-center">
+      <h2 class="mb-4">How It Works</h2>
+      <p class="text-muted mb-5">Your journey to landing the perfect job, simplified.</p>
+  
+      <div class="row gy-4">
+        <!-- Step 1 -->
+        <div class="col-12 col-md-4">
+          <div class="how-it-works-card shadow-sm p-4 h-100">
+            <div class="icon mb-3 fs-1 text-primary">👤</div>
+            <h5 class="fw-bold">Create Your Profile</h5>
+            <p class="text-muted">Sign up and showcase your skills, experience, and career goals.</p>
+          </div>
+        </div>
+  
+        <!-- Step 2 -->
+        <div class="col-12 col-md-4">
+          <div class="how-it-works-card shadow-sm p-4 h-100">
+            <div class="icon mb-3 fs-1 text-success">🔍</div>
+            <h5 class="fw-bold">Search for Jobs</h5>
+            <p class="text-muted">Browse jobs tailored to your profile and preferences.</p>
+          </div>
+        </div>
+  
+        <!-- Step 3 -->
+        <div class="col-12 col-md-4">
+          <div class="how-it-works-card shadow-sm p-4 h-100">
+            <div class="icon mb-3 fs-1 text-danger">✅</div>
+            <h5 class="fw-bold">Apply & Get Hired</h5>
+            <p class="text-muted">Submit your application and land your dream job.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-4">What Job Seekers Say</h2>
+      <p class="text-muted mb-5">Hear from professionals who found their dream jobs through us.</p>
+  
+      <div class="row gy-4">
+        <!-- Testimonial 1 -->
+        <div class="col-12 col-md-4">
+          <div class="testimonial-card shadow-sm p-4 bg-white rounded">
+            <p class="text-muted fst-italic">
+              "This platform helped me land my dream job in just a few weeks! Highly recommend."
+            </p>
+            <h6 class="fw-bold mt-3">⭐ John Doe</h6>
+            <span class="text-secondary">Software Engineer</span>
+          </div>
+        </div>
+  
+        <!-- Testimonial 2 -->
+        <div class="col-12 col-md-4">
+          <div class="testimonial-card shadow-sm p-4 bg-white rounded">
+            <p class="text-muted fst-italic">
+              "I was able to connect with top companies quickly. The job search experience was smooth!"
+            </p>
+            <h6 class="fw-bold mt-3">⭐ Sarah Kim</h6>
+            <span class="text-secondary">Marketing Manager</span>
+          </div>
+        </div>
+  
+        <!-- Testimonial 3 -->
+        <div class="col-12 col-md-4">
+          <div class="testimonial-card shadow-sm p-4 bg-white rounded">
+            <p class="text-muted fst-italic">
+              "The job recommendations were spot on! I found a position that matched my skills perfectly."
+            </p>
+            <h6 class="fw-bold mt-3">⭐ Kevin Oduor</h6>
+            <span class="text-secondary">Financial Analyst</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Call to Action Section -->
+<section class="py-5 text-white bg-primary text-center">
+    <div class="container">
+        <h2 class="mb-3">Ready to Find Your Dream Job?</h2>
+        <p class="lead mb-4">Create your profile and start applying today.</p>
+        <a href="#" class="btn btn-light btn-lg">Get Started</a>
+    </div>
+</section>
+
+<!-- Subscribe to Job Alerts Section -->
+<section class="py-5 bg-light text-center">
+    <div class="container">
+        <h2 class="mb-3">Stay Updated with New Jobs</h2>
+        <p class="text-muted mb-4">Subscribe to receive job alerts straight to your inbox.</p>
+        <form class="row justify-content-center">
+            <div class="col-10 col-md-6">
+                <input type="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+            <div class="col-10 col-md-2 mt-2 mt-md-0">
+                <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+  
+
+{% endblock %}

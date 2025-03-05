@@ -1,0 +1,141 @@
+<div class="container py-5">
+    <h2 class="text-center mb-4 text-primary fw-bold">💼 Explore Our Latest Jobs</h2>
+    <p class="text-muted text-center mb-5">Browse top jobs from trusted companies around the globe. Find your next career move today!</p>
+
+    <!-- Filters & Search Bar -->
+    <div class="card shadow-sm mb-5">
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-lg-4 col-md-6">
+                    <input type="text" class="form-control" placeholder="🔍 Job title, keyword..." aria-label="Search Jobs">
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <select class="form-select">
+                        <option value="">All Categories</option>
+                        <option>Tech</option>
+                        <option>Marketing</option>
+                        <option>Finance</option>
+                        <option>Healthcare</option>
+                    </select>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <input type="text" class="form-control" placeholder="📍 Location (e.g., New York)">
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <select class="form-select">
+                        <option value="">Job Type</option>
+                        <option>Full-Time</option>
+                        <option>Part-Time</option>
+                        <option>Remote</option>
+                    </select>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <select class="form-select">
+                        <option value="newest">Sort By: Newest</option>
+                        <option value="salary-high">Salary: High to Low</option>
+                        <option value="salary-low">Salary: Low to High</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Job Listings -->
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+            <div class="job-card p-4 rounded shadow-sm h-100">
+                <h5 class="job-title mb-1">Software Engineer</h5>
+                <p class="company text-muted mb-1">Tech Company</p>
+                <p class="location mb-1"><i class="bi bi-geo-alt text-primary"></i> New York, NY</p>
+                <p class="salary text-success fw-bold">$80,000 - $100,000 per year</p>
+                <p class="deadline text-danger small mb-2">Apply by: 2023-12-31</p>
+                <p class="description small text-muted">
+                    We are looking for a skilled Software Engineer to develop and maintain web apps.
+                </p>
+                <a href="/jobs/software-engineer" class="btn btn-outline-primary btn-sm">View Details</a>
+            </div>
+        </div>
+
+        <!-- Add more job cards dynamically if needed -->
+    </div>
+
+    <!-- Pagination -->
+    <nav class="mt-5">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link">Previous</a></li>
+            <li class="page-item active"><a class="page-link">1</a></li>
+            <li class="page-item"><a class="page-link">2</a></li>
+            <li class="page-item"><a class="page-link">Next</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Custom Styling -->
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.job-card {
+    background: #ffffff;
+    transition: all 0.3s ease;
+    border: 1px solid #e1e1e1;
+    position: relative;
+}
+.job-card:hover {
+    transform: translateY(-5px);
+    border-color: #007bff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.job-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #212529;
+}
+
+.company {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.location {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.salary {
+    font-size: 1rem;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.form-control, .form-select {
+    font-size: 0.9rem;
+}
+
+.card {
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+.pagination .page-link {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    line-height: 24px;
+    text-align: center;
+}
+</style>

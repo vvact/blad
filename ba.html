@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Your Job Listing Website{% endblock %}</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    body { font-family: 'Roboto', sans-serif; }
+    .navbar-brand img {
+      height: 40px; /* Adjust logo height */
+    }
+    .navbar {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    }
+    .nav-link {
+      font-weight: 500; /* Medium font weight */
+      color: #333 !important; /* Dark text color */
+    }
+    .nav-link:hover {
+      color: #007bff !important; /* Blue color on hover */
+    }
+    .navbar-toggler {
+      border: none; /* Remove border from toggler */
+    }
+    .navbar-toggler:focus {
+      box-shadow: none; /* Remove focus outline */
+    }
+    .offcanvas {
+      width: 250px; /* Set width of the offcanvas sidebar */
+    }
+    @media (min-width: 992px) {
+      .offcanvas {
+        display: none; /* Hide offcanvas on large screens */
+      }
+    }
+    .hero-section {
+      background: url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
+      padding: 150px 0;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .job-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .job-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .job-card h5 {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+    .job-card p {
+      margin-bottom: 0.5rem;
+    }
+    .job-card .btn {
+      margin-top: 10px;
+    }
+    .job-card .description, .job-card .requirements {
+      margin-top: 10px;
+    }
+    .job-card .deadline {
+      color: #dc3545; /* Red color for urgency */
+      font-weight: bold;
+    }
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .footer-links a:hover {
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand" href="/">
+        <img src="https://via.placeholder.com/150x50" alt="Your Logo">
+      </a>
+
+      <!-- Hamburger Menu Button (for mobile) -->
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Offcanvas Sidebar (for mobile) -->
+      <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <!-- Navbar Links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/jobs">Jobs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/employers">Employers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact</a>
+            </li>
+          </ul>
+
+          <!-- Call-to-Action Buttons -->
+          <div class="mt-3">
+            <a href="/post-job" class="btn btn-primary w-100 mb-2">Post a Job</a>
+            <a href="/login" class="btn btn-outline-primary w-100">Login</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navbar Links (for larger screens) -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto"> <!-- ms-auto aligns links to the right -->
+          <li class="nav-item">
+            <a class="nav-link active" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/jobs">Jobs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/employers">Employers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Call-to-Action Buttons (for larger screens) -->
+        <div class="ms-3">
+          <a href="/post-job" class="btn btn-primary">Post a Job</a>
+          <a href="/login" class="btn btn-outline-primary ms-2">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Block -->
+  <main>
+    {% block content %}
+    <!-- Content will be overridden by child templates -->
+    {% endblock %}
+  </main>
+  
+  <section class="hero-section text-white d-flex align-items-center" style="
+  background: url('https://source.unsplash.com/1600x600/?office,work') center/cover no-repeat;
+  min-height: 60vh;
+  position: relative;
+">
+  <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+  <div class="container position-relative text-center">
+      <h1 class="display-3 fw-bold mb-3">Find Your Dream Job Today</h1>
+      <p class="lead mb-4">Browse thousands of job listings from top companies</p>
+
+      <form class="row gy-2 gx-2 justify-content-center">
+          <div class="col-12 col-md-4">
+              <input type="text" class="form-control form-control-lg" placeholder="Job title, keyword...">
+          </div>
+          <div class="col-12 col-md-4">
+              <input type="text" class="form-control form-control-lg" placeholder="Location (e.g., Nairobi)">
+          </div>
+          <div class="col-12 col-md-2">
+              <button type="submit" class="btn btn-warning btn-lg w-100">Search Jobs</button>
+          </div>
+      </form>
+  </div>
+</section>
+
+<section class="featured-jobs py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Featured Jobs</h2>
+            <p class="text-muted">Explore the latest job openings</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Example Job Card (repeat for each job) -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h6 class="text-primary mb-2">Category: <span class="fw-bold">IT & Software</span></h6>
+                        <h5 class="card-title">Software Engineer</h5>
+                        <p class="text-muted mb-1"><strong>Company:</strong> TechCorp Ltd</p>
+                        <p class="text-muted mb-1"><strong>Location:</strong> Nairobi, Kenya</p>
+                        
+                        <!-- Salary and Deadline Row -->
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-success">KSh 150,000 - 200,000</span>
+                            <span class="text-danger small">Deadline: 10th March 2025</span>
+                        </div>
+
+                        <!-- Short Description (trimmed to 2-3 lines) -->
+                        <p class="small text-muted mb-3">
+                            Join our team as a software engineer responsible for building innovative solutions for the fintech industry...
+                        </p>
+
+                        <!-- Requirements (optional small preview) -->
+                        <ul class="small text-muted ps-3">
+                            <li>Bachelor's degree in Computer Science</li>
+                            <li>3+ years of experience in software development</li>
+                        </ul>
+
+                        <a href="#" class="btn btn-primary btn-sm w-100">Apply Now</a>
+                    </div>
+                    <div class="card-footer text-muted small">
+                        Posted on: 2nd March 2025
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat this card for each job dynamically from your backend -->
+        </div>
+    </div>
+</section>
+
+<section class="explore-categories py-5">
+    <div class="container">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Explore Job Categories</h2>
+            <p class="text-muted">Browse jobs by industry to find your perfect match</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Example Category Card - Repeat for each category -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card text-center shadow-sm h-100 border-0">
+                    <div class="card-body">
+                        <div class="category-icon mb-3">
+                            <i class="bi bi-laptop fs-1 text-primary"></i>
+                        </div>
+                        <h6 class="card-title mb-1">Tech & Software</h6>
+                        <p class="small text-muted">42 Jobs</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card text-center shadow-sm h-100 border-0">
+                    <div class="card-body">
+                        <div class="category-icon mb-3">
+                            <i class="bi bi-bullhorn fs-1 text-primary"></i>
+                        </div>
+                        <h6 class="card-title mb-1">Marketing</h6>
+                        <p class="small text-muted">35 Jobs</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card text-center shadow-sm h-100 border-0">
+                    <div class="card-body">
+                        <div class="category-icon mb-3">
+                            <i class="bi bi-briefcase fs-1 text-primary"></i>
+                        </div>
+                        <h6 class="card-title mb-1">Finance</h6>
+                        <p class="small text-muted">27 Jobs</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card text-center shadow-sm h-100 border-0">
+                    <div class="card-body">
+                        <div class="category-icon mb-3">
+                            <i class="bi bi-heart-pulse fs-1 text-primary"></i>
+                        </div>
+                        <h6 class="card-title mb-1">Healthcare</h6>
+                        <p class="small text-muted">18 Jobs</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more categories here -->
+        </div>
+    </div>
+</section>
+
+<section class="how-it-works py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">How It Works</h2>
+            <p class="text-muted">Find your dream job or hire top talent in just a few steps.</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Job Seekers Section -->
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="fw-bold mb-3"><i class="bi bi-person-check text-primary"></i> For Job Seekers</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <i class="bi bi-person-plus-fill text-success"></i> <strong>Sign Up</strong> – Create your free account.
+                            </li>
+                            <li class="list-group-item">
+                                <i class="bi bi-search text-warning"></i> <strong>Browse Jobs</strong> – Explore thousands of job listings.
+                            </li>
+                            <li class="list-group-item">
+                                <i class="bi bi-send-check-fill text-info"></i> <strong>Apply</strong> – Submit applications with a click.
+                            </li>
+                            <li class="list-group-item">
+                                <i class="bi bi-briefcase-fill text-danger"></i> <strong>Get Hired</strong> – Land your dream job!
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Employers Section -->
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="fw-bold mb-3"><i class="bi bi-building text-primary"></i> For Employers</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <i class="bi bi-person-plus text-success"></i> <strong>Post a Job</strong> – List your open positions.
+                            </li>
+                            <li class="list-group-item">
+                                <i class="bi bi-card-list text-warning"></i> <strong>Review Applicants</strong> – Filter and shortlist candidates.
+                            </li>
+                            <li class="list-group-item">
+                                <i class="bi bi-chat-dots-fill text-info"></i> <strong>Interview</strong> – Connect with top talent.
+                            </li>
+                            <li class="list-group-item">
+                                <i class="bi bi-award-fill text-danger"></i> <strong>Hire</strong> – Build your perfect team!
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="top-companies py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Top Companies Hiring Now</h2>
+            <p class="text-muted">Trusted by leading companies looking for top talent.</p>
+        </div>
+
+        <div class="row justify-content-center g-4">
+            <!-- Company 1 -->
+            <div class="col-6 col-md-3 text-center">
+                <img src="https://via.placeholder.com/120x60" alt="Company 1" class="img-fluid grayscale">
+            </div>
+            <!-- Company 2 -->
+            <div class="col-6 col-md-3 text-center">
+                <img src="https://via.placeholder.com/120x60" alt="Company 2" class="img-fluid grayscale">
+            </div>
+            <!-- Company 3 -->
+            <div class="col-6 col-md-3 text-center">
+                <img src="https://via.placeholder.com/120x60" alt="Company 3" class="img-fluid grayscale">
+            </div>
+            <!-- Company 4 -->
+            <div class="col-6 col-md-3 text-center">
+                <img src="https://via.placeholder.com/120x60" alt="Company 4" class="img-fluid grayscale">
+            </div>
+            <!-- Company 5 -->
+            <div class="col-6 col-md-3 text-center">
+                <img src="https://via.placeholder.com/120x60" alt="Company 5" class="img-fluid grayscale">
+            </div>
+            <!-- Company 6 -->
+            <div class="col-6 col-md-3 text-center">
+                <img src="https://via.placeholder.com/120x60" alt="Company 6" class="img-fluid grayscale">
+            </div>
+            <!-- Company 7 -->
+            <div class="col-6 col-md-3 text-center">
+                <img src="https://via.placeholder.com/120x60" alt="Company 7" class="img-fluid grayscale">
+            </div>
+            <!-- Company 8 -->
+            <div class="col-6 col-md-3 text-center">
+                <img src="https://via.placeholder.com/120x60" alt="Company 8" class="img-fluid grayscale">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Success Stories</h2>
+            <p class="text-muted">Hear from job seekers who found their dream jobs with us.</p>
+        </div>
+
+        <div class="row justify-content-center g-4">
+            <!-- Testimonial 1 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <p class="text-muted fst-italic">"I landed my dream job within a week of signing up! The platform is easy to use, and I love how many jobs are available."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://via.placeholder.com/50" alt="User 1" class="rounded-circle me-3">
+                            <div>
+                                <h6 class="fw-bold mb-0">Jane W.</h6>
+                                <small class="text-muted">Marketing Specialist</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <p class="text-muted fst-italic">"I had been struggling to find a remote tech job, but this platform connected me to the perfect role. Highly recommended!"</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://via.placeholder.com/50" alt="User 2" class="rounded-circle me-3">
+                            <div>
+                                <h6 class="fw-bold mb-0">Kevin M.</h6>
+                                <small class="text-muted">Software Developer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <p class="text-muted fst-italic">"I love how I can search for jobs by category and location. It made my job search super efficient."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://via.placeholder.com/50" alt="User 3" class="rounded-circle me-3">
+                            <div>
+                                <h6 class="fw-bold mb-0">Aisha K.</h6>
+                                <small class="text-muted">HR Manager</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blog-resources py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Career Advice & Resources</h2>
+            <p class="text-muted">Tips and insights to help you land your dream job.</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Blog Post 1 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog Image 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Top 10 CV Writing Tips</h5>
+                        <p class="card-text text-muted">Learn how to craft a winning CV that stands out to recruiters.</p>
+                        <a href="#" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog Image 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Ace Your Next Interview</h5>
+                        <p class="card-text text-muted">Essential interview preparation tips for job seekers.</p>
+                        <a href="#" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Post 3 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Blog Image 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Remote Job Search Strategies</h5>
+                        <p class="card-text text-muted">How to find and apply for remote jobs in 2025.</p>
+                        <a href="#" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+      <div class="footer-links mb-3">
+        <a href="#" class="text-white me-3">About</a>
+        <a href="#" class="text-white me-3">Privacy Policy</a>
+        <a href="#" class="text-white me-3">Terms of Service</a>
+        <a href="#" class="text-white">Contact</a>
+      </div>
+      <div class="social-icons mb-3">
+        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p>&copy; 2023 Your Job Listing Website. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

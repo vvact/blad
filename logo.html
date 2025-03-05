@@ -1,0 +1,383 @@
+<!-- Bootstrap CSS (Make sure you have this if you haven't already) -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <h1 class="font-weight-bold logo-text mb-0">
+                Work<span class="bridge-text">Bridge</span>
+            </h1>
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Jobs</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Employers</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="btn btn-primary btn-md ml-3" href="#">Post a Job</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="btn btn-outline-primary btn-md ml-2" href="#">Sign In</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Navbar End -->
+
+<!-- Logo + Navbar Styles -->
+<style>
+    /* Logo Text */
+    .logo-text {
+        font-size: 2rem;
+        font-family: 'Poppins', sans-serif;
+        color: #007bff;
+    }
+
+    .bridge-text {
+        color: #ff6f61;
+    }
+
+    /* Navbar Links */
+    .navbar-nav .nav-link {
+        font-size: 1rem; /* Larger font size */
+        font-weight: 600; /* Slightly bolder */
+        color: #333; /* Darker color */
+        padding: 10px 15px; /* Spacing around links */
+        transition: all 0.3s ease;
+    }
+    .navbar-nav .btn {
+    margin: 0 5px;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: #007bff;
+        text-decoration: underline;
+    }
+
+    /* Buttons */
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    
+    .btn-primary {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-outline-primary {
+    color: #0056b3;
+}
+
+
+
+    .btn-outline-primary {
+        color: #007bff;
+        border-color: #007bff;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    /* Mobile Tweaks */
+    @media (max-width: 768px) {
+        .logo-text {
+            font-size: 1.5rem;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 0.95rem;
+            padding: 8px 12px;
+        }
+
+        .btn-primary, .btn-outline-primary {
+            font-size: 0.9rem;
+        }
+    }
+</style>
+<!-- Hero Section Start -->
+<section class="hero-section d-flex align-items-center" style="background: #f8f9fa; padding: 80px 0;">
+    <div class="container text-center">
+        <h1 class="display-4 font-weight-bold text-primary">Find Your Dream Job with <span class="text-danger">WorkBridge</span></h1>
+        <p class="lead text-muted">Search thousands of jobs from top companies and get hired fast!</p>
+
+        <form class="hero-search-form mt-4">
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-2 mb-md-0">
+                    <input type="text" class="form-control form-control-lg" placeholder="Job title, keyword...">
+                </div>
+                <div class="col-md-3 mb-2 mb-md-0">
+                    <input type="text" class="form-control form-control-lg" placeholder="Location (City, Country)">
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Search</button>
+                </div>
+            </div>
+        </form>
+
+        <p class="mt-4 text-muted">Popular Searches: <a href="#" class="text-primary">Software Engineer</a>, <a href="#" class="text-primary">Marketing</a>, <a href="#" class="text-primary">Finance</a></p>
+    </div>
+</section>
+<!-- Hero Section End -->
+
+<!-- Hero Section Styling -->
+<style>
+    .hero-section {
+        background: linear-gradient(to right, #007bff, #ff6f61);
+        color: white;
+        padding: 100px 0;
+        position: relative;
+    }
+    .hero-section {
+    background: linear-gradient(to right, #007bff, #ff6f61);
+}
+.hero-section h1 {
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hero-search-form .form-control {
+    height: 48px;
+    border: 1px solid #ddd;
+}
+    .hero-section h1 {
+        font-size: 2.75rem;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+        color: #f8f9fa;
+    }
+
+    .hero-search-form input {
+        border: none;
+        padding: 15px;
+        font-size: 1rem;
+        border-radius: 0.5rem;
+    }
+
+    .hero-search-form button {
+        background-color: #ff6f61;
+        border: none;
+        padding: 15px;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 0.5rem;
+        transition: background-color 0.3s;
+    }
+
+    .hero-search-form button:hover {
+        background-color: #e95a4f;
+    }
+
+    .hero-section a {
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .hero-section a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .hero-section h1 {
+            font-size: 2rem;
+        }
+
+        .hero-search-form input {
+            font-size: 0.9rem;
+            padding: 12px;
+        }
+
+        .hero-search-form button {
+            font-size: 0.9rem;
+            padding: 12px;
+        }
+    }
+</style>
+
+
+<div class="container py-5 text-center">
+    <h3 class="mb-3">🔥 Featured Jobs</h3>
+    <p class="text-muted mb-4">Discover some of the top jobs handpicked just for you.</p>
+
+    <div class="row justify-content-center">
+        <div class="col-md-4 col-12 mb-3">
+            <div class="job-card p-3 shadow-sm rounded">
+                <h5 class="job-title mb-1">Software Engineer</h5>
+                <p class="company text-muted mb-1">Tech Company</p>
+                <p class="location text-secondary mb-1"><i class="bi bi-geo-alt"></i> New York, NY</p>
+                <p class="salary text-success font-weight-bold mb-1">$80,000 - $100,000 per year</p>
+                <p class="deadline text-danger mb-2">Apply by: 2023-12-31</p>
+                <p class="description d-none d-md-block text-muted" style="font-size: 0.9rem;">
+                    We are looking for a skilled Software Engineer to join our team. You will be responsible for developing and maintaining web applications.
+                </p>
+                <a href="#" class="btn btn-primary btn-sm">Apply Now</a>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-12 mb-3">
+            <div class="job-card p-3 shadow-sm rounded">
+                <h5 class="job-title mb-1">Marketing Specialist</h5>
+                <p class="company text-muted mb-1">Creative Agency</p>
+                <p class="location text-secondary mb-1"><i class="bi bi-geo-alt"></i> San Francisco, CA</p>
+                <p class="salary text-success font-weight-bold mb-1">$60,000 - $75,000 per year</p>
+                <p class="deadline text-danger mb-2">Apply by: 2023-12-28</p>
+                <p class="description d-none d-md-block text-muted" style="font-size: 0.9rem;">
+                    Join our creative team to design and execute innovative marketing campaigns for top clients.
+                </p>
+                <a href="#" class="btn btn-primary btn-sm">Apply Now</a>
+            </div>
+        </div>
+
+        <!-- Add more jobs dynamically in the real implementation -->
+    </div>
+
+    <!-- View All Jobs Button -->
+    <div class="mt-4">
+        <a href="/jobs" class="btn btn-outline-primary btn-lg">View All Jobs</a>
+    </div>
+</div>
+
+<style>
+
+.job-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.job-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.job-card {
+    background: #f8f9fa;
+    transition: transform 0.3s ease;
+}
+.job-card:hover {
+    transform: translateY(-5px);
+    background-color: #fff;
+}
+.job-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+@media (max-width: 768px) {
+    .description {
+        display: none;  /* Hide description on small screens */
+    }
+    .job-card {
+        padding: 12px;
+    }
+}
+</style>
+
+
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="mb-4">Explore Job Categories</h2>
+        <p class="text-muted mb-5">Browse jobs by industry and find your perfect match.</p>
+
+        <div class="row g-4">
+            <!-- Category Card 1 -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="fs-1 mb-3">💻</div>
+                        <h5 class="card-title">Technology</h5>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category Card 2 -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="fs-1 mb-3">📊</div>
+                        <h5 class="card-title">Marketing</h5>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Card 3 -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="fs-1 mb-3">💰</div>
+                        <h5 class="card-title">Finance</h5>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Card 4 -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="fs-1 mb-3">⚕️</div>
+                        <h5 class="card-title">Healthcare</h5>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more categories if needed -->
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Bootstrap JS (if needed for toggler to work) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

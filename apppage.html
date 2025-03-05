@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apply for the job on our platform. Submit your resume, cover letter, and other details.">
+  <meta name="keywords" content="job application, apply for jobs, careers">
+  <meta name="author" content="Your Company Name">
+  <title>Apply for Job - Your Job Listing Website</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    body { font-family: 'Roboto', sans-serif; }
+    .application-form { background: #f8f9fa; padding: 30px; border-radius: 10px; }
+    .form-label { font-weight: bold; }
+    .form-control, .form-select { margin-bottom: 15px; }
+    .submit-btn { width: 100%; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-light py-3 shadow-sm">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <a href="/" class="navbar-brand">
+          <img src="https://via.placeholder.com/150x50" alt="Your Logo">
+        </a>
+        <nav>
+          <a href="#" class="me-3 text-dark text-decoration-none">Home</a>
+          <a href="#" class="me-3 text-dark text-decoration-none">Jobs</a>
+          <a href="#" class="me-3 text-dark text-decoration-none">Employers</a>
+          <a href="#" class="btn btn-primary">Post a Job</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container my-5">
+    <h1 class="text-center mb-4">Apply for Job: Software Engineer</h1>
+
+    <!-- Application Form -->
+    <div class="row justify-content-center">
+      <div class="col-md-8 application-form">
+        <form>
+          <!-- Personal Information -->
+          <div class="mb-4">
+            <h5>Personal Information</h5>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" required>
+              </div>
+              <div class="col-md-6">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="col-md-6">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" class="form-control" id="phone" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resume Upload -->
+          <div class="mb-4">
+            <h5>Resume</h5>
+            <label for="resume" class="form-label">Upload Your Resume (PDF or DOC)</label>
+            <input type="file" class="form-control" id="resume" accept=".pdf,.doc,.docx" required>
+          </div>
+
+          <!-- Cover Letter -->
+          <div class="mb-4">
+            <h5>Cover Letter</h5>
+            <label for="coverLetter" class="form-label">Write Your Cover Letter</label>
+            <textarea class="form-control" id="coverLetter" rows="5" required></textarea>
+          </div>
+
+          <!-- Additional Questions -->
+          <div class="mb-4">
+            <h5>Additional Questions</h5>
+            <label for="experience" class="form-label">Years of Experience</label>
+            <select class="form-select" id="experience" required>
+              <option value="">Select</option>
+              <option value="0-2">0-2 years</option>
+              <option value="3-5">3-5 years</option>
+              <option value="5+">5+ years</option>
+            </select>
+            <label for="linkedin" class="form-label">LinkedIn Profile (Optional)</label>
+            <input type="url" class="form-control" id="linkedin">
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary submit-btn">Submit Application</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+      <div class="footer-links mb-3">
+        <a href="#" class="text-white me-3">About</a>
+        <a href="#" class="text-white me-3">Privacy Policy</a>
+        <a href="#" class="text-white me-3">Terms of Service</a>
+        <a href="#" class="text-white">Contact</a>
+      </div>
+      <div class="social-icons mb-3">
+        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p>&copy; 2023 Your Job Listing Website. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
