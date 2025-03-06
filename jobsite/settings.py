@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-3_*t#ss+l9avq70tumd9u8%d19i+7b*wk72uzhvi_v-=7dlb=7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['workbridge-45xz.onrender.com']
 
 
 # Application definition
@@ -72,6 +72,10 @@ DATABASES = {
     }
 }
 
+import dj_database_url
+DATABASES = {
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
