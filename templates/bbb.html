@@ -63,11 +63,11 @@
           <ul class="navbar-nav ml-auto">
         
             <li class="nav-item">
-              <a class="nav-link" href="#">Jobs</a>
+              <a class="nav-link" href="{% url 'job_list' %}">Jobs</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#">Employers</a>
+              <a class="nav-link" href="{% url 'about_us' %}">About Us</a>
             </li>
 
             <li class="nav-item">
@@ -75,7 +75,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="{% url 'contact_us' %}">Contact</a>
             </li>
 
             <li class="nav-item">
@@ -83,7 +83,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="btn btn-outline-primary btn-md ml-2" href="#"
+              <a class="btn btn-outline-primary btn-md ml-2" href="{% url 'register' %}"
                 >Sign In</a
               >
             </li>
@@ -180,7 +180,7 @@
               <h5 class="text-uppercase">Quick Links</h5>
               <ul class="list-unstyled">
                 <li><a href="{% url 'home' %}" class="text-white text-decoration-none">Home</a></li>
-                <li><a href="#" class="text-white text-decoration-none">Jobs</a></li>
+                <li><a href="{% url 'job_list' %}" class="text-white text-decoration-none">Jobs</a></li>
                 <li><a href="{% url 'about_us' %}" class="text-white text-decoration-none">About</a></li>
                 <li><a href="{% url 'contact_us' %}" class="text-white text-decoration-none">Contact</a></li>
               </ul>
